@@ -4,6 +4,6 @@
     "website_url": "https://github.com/ManindraDeMel/MoreMoney",
     "description": "Adds 1000 base credit when you start the game :)",
     "dependencies": [
-        "BepInEx-BepInEx_MLLoader-2.1.0"
+        "BepInEx-BepInExPack-5.4.2100"
     ]
 }
