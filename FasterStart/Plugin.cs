@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using FasterStart.Patches;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ namespace FasterStart
             mls.LogInfo("Test");
 
             harmony.PatchAll(typeof(FasterStart));
+            harmony.PatchAll(typeof(MoreMoney));
         }
     }
 }
