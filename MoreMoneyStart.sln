@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterStart", "FasterStart\FasterStart.csproj", "{1794C9E2-6213-4024-B55E-67F56DA5B373}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMoneyStart", "FasterStart\MoreMoneyStart.csproj", "{1794C9E2-6213-4024-B55E-67F56DA5B373}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,27 +1,18 @@
 ﻿using BepInEx;
-using BepInEx.Logging;
-using FasterStart.Patches;
+using MoreMoneyStart.Patches;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FasterStart
+namespace MoreMoneyStart
 {
     [BepInPlugin(modGUID, modName, modVersion)]
-    public class FasterStart : BaseUnityPlugin
+    public class MoreMoneyStart : BaseUnityPlugin
     {
-        private const string modGUID = "299792458.FasterStart";
-        private const string modName = "Faster Start";
-        private const string modVersion = "1.0.0";
+        private const string modGUID = "299792458.MoreMoneyStart";
+        private const string modName = "MoreMoneyStart";
+        private const string modVersion = "1.1.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
-        private static FasterStart Instance;
-
-        internal ManualLogSource mls;
+        private static MoreMoneyStart Instance;
 
         void Awake()
         {
@@ -29,12 +20,6 @@ namespace FasterStart
             {
                 Instance = this;
             }
-
-            mls = BepInEx.Logging.Logger.CreateLogSource(modGUID);
-
-            mls.LogInfo("Test");
-
-            harmony.PatchAll(typeof(FasterStart));
             harmony.PatchAll(typeof(MoreMoney));
         }
     }

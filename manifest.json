@@ -1,8 +1,8 @@
 {
     "name": "MoreMoneyStart",
-    "version_number": "1.0.1",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/ManindraDeMel/MoreMoney",
-    "description": "Adds 1000 base credit when you start the game :)",
+    "description": "Changes 60 -> 1000 starting credits when you start a new game :)",
     "dependencies": [
         "BepInEx-BepInExPack-5.4.2100"
     ]

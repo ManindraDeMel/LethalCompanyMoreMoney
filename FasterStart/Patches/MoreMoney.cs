@@ -1,11 +1,5 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FasterStart.Patches
+namespace MoreMoneyStart.Patches
 {
     [HarmonyPatch(typeof(Terminal))]
     internal class MoreMoney
@@ -14,7 +8,10 @@ namespace FasterStart.Patches
         [HarmonyPostfix]
         static void betterStartingAmount(ref int ___groupCredits)
         {
-            ___groupCredits = 1000;
+            if (___groupCredits == TimeOfDay.Instance.quotaVariables.startingCredits)
+            {
+                ___groupCredits = 1000;
+            }            
         }
     }
 }
