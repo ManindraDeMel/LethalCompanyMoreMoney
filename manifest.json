@@ -1,6 +1,6 @@
 {
     "name": "MoreMoneyStart",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/ManindraDeMel/MoreMoney",
     "description": "Adds 1000 base credit when you start the game :)",
     "dependencies": [
