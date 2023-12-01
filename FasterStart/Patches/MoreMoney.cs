@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+
 namespace MoreMoneyStart.Patches
 {
     [HarmonyPatch(typeof(Terminal))]
@@ -6,12 +7,14 @@ namespace MoreMoneyStart.Patches
     {
         [HarmonyPatch("Start")]
         [HarmonyPostfix]
-        static void betterStartingAmount(ref int ___groupCredits)
+        static void betterStartingAmount(Terminal __instance, ref int ___groupCredits)
         {
-            if (___groupCredits == TimeOfDay.Instance.quotaVariables.startingCredits)
+            QuotaSettings quotaSettings = new QuotaSettings();
+
+            if (___groupCredits == quotaSettings.startingCredits && TimeOfDay.Instance.daysUntilDeadline == 3 && TimeOfDay.Instance.profitQuota == 130) // isolate to the first day of a new game
             {
                 ___groupCredits = 1000;
-            }            
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace MoreMoneyStart
     {
         private const string modGUID = "299792458.MoreMoneyStart";
         private const string modName = "MoreMoneyStart";
-        private const string modVersion = "1.1.0";
+        private const string modVersion = "1.1.1";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
