@@ -8,7 +8,7 @@ namespace MoreMoneyStart
     {
         private const string modGUID = "299792458.MoreMoneyStart";
         private const string modName = "MoreMoneyStart";
-        private const string modVersion = "1.1.1";
+        private const string modVersion = "1.2.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -21,6 +21,7 @@ namespace MoreMoneyStart
                 Instance = this;
             }
             harmony.PatchAll(typeof(MoreMoney));
+            harmony.PatchAll(typeof(ResetTerminal));
         }
     }
 }

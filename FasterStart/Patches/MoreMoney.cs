@@ -17,4 +17,14 @@ namespace MoreMoneyStart.Patches
             }
         }
     }
+    [HarmonyPatch(typeof(StartOfRound))]
+    internal class ResetTerminal
+    {
+        [HarmonyPatch("ResetShip")]
+        [HarmonyPostfix]
+        static void resetTerminal()
+        {
+            UnityEngine.Object.FindObjectOfType<Terminal>().groupCredits = 1000;
+        }
+    }
 }
