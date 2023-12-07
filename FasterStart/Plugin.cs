@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using MoreMoneyStart.Patches;
 using HarmonyLib;
+using BepInEx.Configuration;
 namespace MoreMoneyStart
 {
     [BepInPlugin(modGUID, modName, modVersion)]
@@ -8,11 +9,11 @@ namespace MoreMoneyStart
     {
         private const string modGUID = "299792458.MoreMoneyStart";
         private const string modName = "MoreMoneyStart";
-        private const string modVersion = "1.2.0";
+        private const string modVersion = "2.0.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
-
-        private static MoreMoneyStart Instance;
+        public ConfigEntry<int> startingAmount;
+        public static MoreMoneyStart Instance;
 
         void Awake()
         {
@@ -20,6 +21,7 @@ namespace MoreMoneyStart
             {
                 Instance = this;
             }
+            startingAmount = Config.Bind("Starting Amount Config", "Starting Amount", 1000, "The starting amount can be configured here");
             harmony.PatchAll(typeof(MoreMoney));
             harmony.PatchAll(typeof(ResetTerminal));
         }

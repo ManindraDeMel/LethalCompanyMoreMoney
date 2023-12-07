@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-
 namespace MoreMoneyStart.Patches
 {
     [HarmonyPatch(typeof(Terminal))]
@@ -13,7 +12,7 @@ namespace MoreMoneyStart.Patches
 
             if (___groupCredits == quotaSettings.startingCredits && TimeOfDay.Instance.daysUntilDeadline == 3 && TimeOfDay.Instance.profitQuota == 130) // isolate to the first day of a new game
             {
-                ___groupCredits = 1000;
+                ___groupCredits = MoreMoneyStart.Instance.startingAmount.Value;
             }
         }
     }
@@ -24,7 +23,7 @@ namespace MoreMoneyStart.Patches
         [HarmonyPostfix]
         static void resetTerminal()
         {
-            UnityEngine.Object.FindObjectOfType<Terminal>().groupCredits = 1000;
+            UnityEngine.Object.FindObjectOfType<Terminal>().groupCredits = MoreMoneyStart.Instance.startingAmount.Value;
         }
     }
 }
