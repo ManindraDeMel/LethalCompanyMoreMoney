@@ -1,6 +1,6 @@
 {
     "name": "MoreMoneyStart",
-    "version_number": "2.0.0",
+    "version_number": "2.1.0",
     "website_url": "https://github.com/ManindraDeMel/MoreMoney",
     "description": "Changes 60 -> 1000 starting credits when you start a new game :)",
     "dependencies": [

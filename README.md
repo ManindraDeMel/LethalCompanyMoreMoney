@@ -5,6 +5,11 @@
 
 ## Change Log
 
+## V2.1.0
+
+- Mod now works with version 45
+- Simplified the code a lot (basically one line now)
+
 ### V2.0.0
 
 - The starting amount is now configurable

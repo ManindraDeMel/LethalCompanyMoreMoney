@@ -1,29 +1,16 @@
 ﻿using HarmonyLib;
 namespace MoreMoneyStart.Patches
 {
-    [HarmonyPatch(typeof(Terminal))]
-    internal class MoreMoney
+    [HarmonyPatch(typeof(TimeOfDay))]
+    [HarmonyPatch("Awake")]
+    public static class TimeOfDayAwakePatch
     {
-        [HarmonyPatch("Start")]
-        [HarmonyPostfix]
-        static void betterStartingAmount(Terminal __instance, ref int ___groupCredits)
+        static void Postfix(TimeOfDay __instance)
         {
-            QuotaSettings quotaSettings = new QuotaSettings();
-
-            if (___groupCredits == quotaSettings.startingCredits && TimeOfDay.Instance.daysUntilDeadline == 3 && TimeOfDay.Instance.profitQuota == 130) // isolate to the first day of a new game
+            if (__instance.quotaVariables != null)
             {
-                ___groupCredits = MoreMoneyStart.Instance.startingAmount.Value;
+                __instance.quotaVariables.startingCredits = MoreMoneyStart.Instance.startingAmount.Value;
             }
-        }
-    }
-    [HarmonyPatch(typeof(StartOfRound))]
-    internal class ResetTerminal
-    {
-        [HarmonyPatch("ResetShip")]
-        [HarmonyPostfix]
-        static void resetTerminal()
-        {
-            UnityEngine.Object.FindObjectOfType<Terminal>().groupCredits = MoreMoneyStart.Instance.startingAmount.Value;
         }
     }
 }
