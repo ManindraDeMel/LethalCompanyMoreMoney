@@ -7,6 +7,8 @@ Can be found [here](https://thunderstore.io/c/lethal-company/p/299792458/MoreMon
 
 ## Change Log
 
+## THIS MOD DOES NOT WORK ANYMORE
+
 ## V2.1.0
 
 - Mod now works with version 45
