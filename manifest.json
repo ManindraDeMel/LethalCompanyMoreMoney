@@ -2,7 +2,7 @@
     "name": "MoreMoneyStart",
     "version_number": "3.0.0",
     "website_url": "https://github.com/ManindraDeMel/MoreMoney",
-    "description": "Changes 60 -> 1000 starting credits when you start a new game :) (confiugrable)",
+    "description": "Changes 60 -> 1000 (configurable) starting credits when you start a new game :) ",
     "dependencies": [
         "BepInEx-BepInExPack-5.4.2100"
     ]
